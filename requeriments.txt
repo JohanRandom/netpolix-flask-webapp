@@ -1,0 +1,4 @@
+flask>=3.0.0
+flask-cors
+sqlalchemy>=2.0.0
+mysql-connector-python>=8.3.0
