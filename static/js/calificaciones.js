@@ -123,6 +123,114 @@ function buscarCalificaciones() {
 
 }
 
+// ===============================================
+// EDITAR CALIFICACION
+// ===============================================
+
+document
+    .getElementById("formEditarCalificacion")
+    .addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const id = document.getElementById("editar_id").value;
+
+        const valor = document.getElementById("editar_valor").value;
+
+        try {
+
+            const response = await fetch(`${API}/${id}`, {
+
+                method: "PUT",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    valor: valor
+                })
+
+            });
+
+            if (response.ok) {
+
+                alert("Calificación actualizada correctamente");
+
+                document
+                    .getElementById("formEditarCalificacion")
+                    .reset();
+
+                obtenerCalificaciones();
+
+            } else {
+
+                alert("Error al actualizar calificación");
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert("Error de conexión");
+
+        }
+
+    });
+
+// ===============================================
+// ELIMINAR CALIFICACION
+// ===============================================
+
+document
+    .getElementById("formEliminarCalificacion")
+    .addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const id = document.getElementById("eliminar_id").value;
+
+        const confirmar = confirm(
+            "¿Seguro que deseas eliminar esta calificación?"
+        );
+
+        if (!confirmar) return;
+
+        try {
+
+            const response = await fetch(`${API}/${id}`, {
+
+                method: "DELETE"
+
+            });
+
+            if (response.ok) {
+
+                alert("Calificación eliminada correctamente");
+
+                document
+                    .getElementById("formEliminarCalificacion")
+                    .reset();
+
+                obtenerCalificaciones();
+
+            } else {
+
+                alert("Error al eliminar calificación");
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert("Error de conexión");
+
+        }
+
+    });
+
 
 // ===============================================
 // INICIO
