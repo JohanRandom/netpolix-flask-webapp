@@ -131,6 +131,119 @@ function buscarVideos() {
 
 }
 
+// ===============================================
+// EDITAR VIDEO
+// ===============================================
+
+document
+    .getElementById("formEditarVideo")
+    .addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const id = document.getElementById("editar_id").value;
+
+        const titulo = document.getElementById("editar_titulo").value;
+
+        const anio = document.getElementById("editar_anio").value;
+
+        const duracion = document.getElementById("editar_duracion").value;
+
+        try {
+
+            const response = await fetch(`${API}/${id}`, {
+
+                method: "PUT",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    titulo: titulo,
+                    anio: parseInt(anio),
+                    duracion: parseInt(duracion)
+                })
+
+            });
+
+            if (response.ok) {
+
+                alert("Video actualizado correctamente");
+
+                document
+                    .getElementById("formEditarVideo")
+                    .reset();
+
+                obtenerVideos();
+
+            } else {
+
+                alert("Error al actualizar video");
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert("Error de conexión");
+
+        }
+
+    });
+
+// ===============================================
+// ELIMINAR VIDEO
+// ===============================================
+
+document
+    .getElementById("formEliminarVideo")
+    .addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const id = document.getElementById("eliminar_id").value;
+
+        const confirmar = confirm(
+            "¿Seguro que deseas eliminar este video?"
+        );
+
+        if (!confirmar) return;
+
+        try {
+
+            const response = await fetch(`${API}/${id}`, {
+
+                method: "DELETE"
+
+            });
+
+            if (response.ok) {
+
+                alert("Video eliminado correctamente");
+
+                document
+                    .getElementById("formEliminarVideo")
+                    .reset();
+
+                obtenerVideos();
+
+            } else {
+
+                alert("Error al eliminar video");
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert("Error de conexión");
+
+        }
+
+    });
 
 // ===============================================
 // INICIO
