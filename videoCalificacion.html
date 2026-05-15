@@ -188,7 +188,7 @@
                             <div class="tab-pane fade show active" id="crear">
 
                                 <h4 class="mb-4">
-                                    Crear Calificación
+                                    Asignar Calificación
                                 </h4>
 
                                 <form id="formCategoria">
@@ -229,30 +229,42 @@
                             <!-- EDITAR -->
                             <div class="tab-pane fade" id="editar">
 
-                                <h4 class="mb-4">
-                                    Editar Calificación
-                                </h4>
+                                <div class="alert alert-info">
 
-                                <div class="alert alert-warning">
-
-                                    Funcionalidad en desarrollo.
+                                    Las relaciones video-calificación no requieren edición.
+                                    Se recomienda eliminar y crear nuevamente.
 
                                 </div>
-
                             </div>
 
                             <!-- ELIMINAR -->
                             <div class="tab-pane fade" id="eliminar">
 
                                 <h4 class="mb-4">
-                                    Eliminar Calificación
+                                    Eliminar Calificación a Video
                                 </h4>
 
-                                <div class="alert alert-danger">
+                                <form id="formEliminarRelacion">
 
-                                    Funcionalidad en desarrollo.
+                                    <div class="mb-3">
 
-                                </div>
+                                        <label class="form-label">
+                                            ID de la relación
+                                        </label>
+
+                                        <input type="number" id="eliminar_id" class="form-control" placeholder="Ej: 1"
+                                            required>
+
+                                    </div>
+
+                                    <button class="btn btn-danger w-100">
+
+                                        <i class="bi bi-trash"></i>
+                                        Eliminar Relación
+
+                                    </button>
+
+                                </form>
 
                             </div>
 
@@ -260,7 +272,7 @@
                             <div class="tab-pane fade" id="buscar">
 
                                 <h4 class="mb-4">
-                                    Buscar Calificación
+                                    Buscar Calificaciones
                                 </h4>
 
                                 <div class="mb-3">
