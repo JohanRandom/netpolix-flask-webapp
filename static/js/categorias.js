@@ -127,6 +127,116 @@ document
 
     });
 
+// ===============================================
+// EDITAR CATEGORIA
+// ===============================================
+
+document
+    .getElementById("formEditarCategoria")
+    .addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const id = document.getElementById("editar_id").value;
+
+        const nombre = document.getElementById("editar_nombre").value;
+
+        const descripcion = document.getElementById("editar_descripcion").value;
+
+        try {
+
+            const response = await fetch(`${API}/${id}`, {
+
+                method: "PUT",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    nombre: nombre,
+                    descripcion: descripcion
+                })
+
+            });
+
+            if (response.ok) {
+
+                alert("Categoría actualizada correctamente");
+
+                document
+                    .getElementById("formEditarCategoria")
+                    .reset();
+
+                obtenerCategorias();
+
+            } else {
+
+                alert("Error al actualizar categoría");
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert("Error de conexión");
+
+        }
+
+    });
+
+// ===============================================
+// ELIMINAR CATEGORIA
+// ===============================================
+
+document
+    .getElementById("formEliminarCategoria")
+    .addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const id = document.getElementById("eliminar_id").value;
+
+        const confirmar = confirm(
+            "¿Seguro que deseas eliminar esta categoría?"
+        );
+
+        if (!confirmar) return;
+
+        try {
+
+            const response = await fetch(`${API}/${id}`, {
+
+                method: "DELETE"
+
+            });
+
+            if (response.ok) {
+
+                alert("Categoría eliminada correctamente");
+
+                document
+                    .getElementById("formEliminarCategoria")
+                    .reset();
+
+                obtenerCategorias();
+
+            } else {
+
+                alert("Error al eliminar categoría");
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert("Error de conexión");
+
+        }
+
+    });
 
 // ===============================================
 // CARGAR AL INICIAR
