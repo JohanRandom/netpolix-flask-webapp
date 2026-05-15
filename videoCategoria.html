@@ -229,13 +229,10 @@
                             <!-- EDITAR -->
                             <div class="tab-pane fade" id="editar">
 
-                                <h4 class="mb-4">
-                                    Editar Asignación
-                                </h4>
+                                <div class="alert alert-info">
 
-                                <div class="alert alert-warning">
-
-                                    Funcionalidad en desarrollo.
+                                    Las relaciones video-categoría no requieren edición.
+                                    Se recomienda eliminar y crear nuevamente.
 
                                 </div>
 
@@ -245,14 +242,30 @@
                             <div class="tab-pane fade" id="eliminar">
 
                                 <h4 class="mb-4">
-                                    Eliminar Asignación
+                                    Eliminar Relación
                                 </h4>
 
-                                <div class="alert alert-danger">
+                                <form id="formEliminarRelacion">
 
-                                    Funcionalidad en desarrollo.
+                                    <div class="mb-3">
 
-                                </div>
+                                        <label class="form-label">
+                                            ID de la relación
+                                        </label>
+
+                                        <input type="number" id="eliminar_id" class="form-control" placeholder="Ej: 1"
+                                            required>
+
+                                    </div>
+
+                                    <button class="btn btn-danger w-100">
+
+                                        <i class="bi bi-trash"></i>
+                                        Eliminar Relación
+
+                                    </button>
+
+                                </form>
 
                             </div>
 

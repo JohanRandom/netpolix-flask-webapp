@@ -152,6 +152,57 @@ function buscarVideoCategoria() {
 
 }
 
+// ===============================================
+// ELIMINAR RELACION
+// ===============================================
+
+document
+    .getElementById("formEliminarRelacion")
+    .addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const id = document.getElementById("eliminar_id").value;
+
+        const confirmar = confirm(
+            "¿Seguro que deseas eliminar esta relación?"
+        );
+
+        if (!confirmar) return;
+
+        try {
+
+            const response = await fetch(`${API_RELACION}/${id}`, {
+
+                method: "DELETE"
+
+            });
+
+            if (response.ok) {
+
+                alert("Relación eliminada correctamente");
+
+                document
+                    .getElementById("formEliminarRelacion")
+                    .reset();
+
+                obtenerVideoCategoria();
+
+            } else {
+
+                alert("Error al eliminar relación");
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert("Error de conexión");
+
+        }
+
+    });
 
 // ===============================================
 // INICIO
