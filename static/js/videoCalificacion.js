@@ -160,7 +160,7 @@ function buscarVideoCalificacion() {
 // ===============================================
 
 document
-    .getElementById("formEliminarRelacion")
+    .getElementById("formEliminarVideoCalificacion")
     .addEventListener("submit", async function (e) {
 
         e.preventDefault();
