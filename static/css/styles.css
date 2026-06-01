@@ -111,33 +111,55 @@ body {
     color: var(--text-white) !important;
 }
 
-/* Inputs y Formularios oscuros */
+/* Inputs y Formularios (Fondo claro con letra negra para mejor lectura) */
 .form-control, .form-select {
-    background-color: var(--netflix-light-gray);
-    border: 1px solid #444;
-    color: white !important;
+    background-color: #f8f9fa !important; /* Gris casi blanco */
+    border: 1px solid #ced4da;
+    color: #000000 !important; /* Letra Negra */
+    border-radius: 4px;
 }
 
-.form-control:focus, .form-select:focus {
-    background-color: #333;
+.form-control:focus {
+    background-color: #ffffff !important;
     border-color: var(--netflix-red);
-    box-shadow: none;
+    box-shadow: 0 0 0 0.25rem rgba(229, 9, 20, 0.25);
+    color: #000000 !important;
 }
 
-/* Tablas con estilo oscuro */
+/* Estilo para los placeholders (el texto de ejemplo "Ej:") */
+.form-control::placeholder {
+    color: #6c757d !important; /* Gris oscuro para que sea legible */
+    opacity: 1;
+}
+
+/* Tablas con estilo Premium Dark (Corregido para visibilidad total) */
 .table {
-    color: var(--text-white);
+    --bs-table-bg: var(--netflix-dark-gray) !important;
+    --bs-table-color: #ffffff !important;
+    background-color: var(--netflix-dark-gray) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--netflix-light-gray);
 }
 
+.table tbody td {
+    color: #ffffff !important; /* Forzar letra blanca en fondo oscuro */
+    background-color: inherit;
+}
+
+.table thead th {
+    background-color: #1a1a1a !important;
+    color: var(--netflix-red) !important;
+    border-bottom: 2px solid var(--netflix-red) !important;
+}
+
+/* Efecto al pasar el mouse por la fila */
 .table-hover tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.07) !important;
 }
 
-.table-light {
-    background-color: var(--netflix-light-gray);
-    color: white;
-    border-bottom: 2px solid var(--netflix-red);
+/* Eliminar el borde de la última fila */
+.table tbody tr:last-child td {
+    border-bottom: none;
 }
 
 /* Sección Hero para el Index */
