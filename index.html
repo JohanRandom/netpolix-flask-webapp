@@ -44,7 +44,8 @@
     <header class="hero">
         <div class="hero-content">
             <h1>NETPOLIX</h1>
-            <p>Descubre un mundo de películas y series sin límites. Gestiona tu catálogo personal de la forma más elegante y profesional.</p>
+            <p>Descubre un mundo de películas y series sin límites. Gestiona tu catálogo personal de la forma más
+                elegante y profesional.</p>
             <div class="d-flex gap-3">
                 <a href="video.html" class="btn btn-netflix">
                     <i class="bi bi-play-fill"></i> Explorar Catálogo
@@ -59,7 +60,7 @@
     <!-- SECCIONES DE ACCESO RÁPIDO -->
     <main class="container py-5">
         <h2 class="mb-4">Gestión del Sistema</h2>
-        
+
         <div class="row g-4">
             <!-- Tarjeta de Videos -->
             <div class="col-md-4">
@@ -67,7 +68,8 @@
                     <div class="card-body text-center py-5">
                         <i class="bi bi-camera-reels fs-1 text-danger mb-3"></i>
                         <h3 class="card-title">Películas</h3>
-                        <p class="card-text text-muted">Administra el inventario de videos, títulos, años y duraciones.</p>
+                        <p class="card-text text-muted">Administra el inventario de videos, títulos, años y duraciones.
+                        </p>
                         <a href="video.html" class="btn btn-netflix mt-3">Gestionar</a>
                     </div>
                 </div>
@@ -79,7 +81,8 @@
                     <div class="card-body text-center py-5">
                         <i class="bi bi-tags fs-1 text-danger mb-3"></i>
                         <h3 class="card-title">Categorías</h3>
-                        <p class="card-text text-muted">Organiza tus películas por géneros como Acción, Drama, Sci-Fi y más.</p>
+                        <p class="card-text text-muted">Organiza tus películas por géneros como Acción, Drama, Sci-Fi y
+                            más.</p>
                         <a href="categorias.html" class="btn btn-netflix mt-3">Gestionar</a>
                     </div>
                 </div>
@@ -91,7 +94,8 @@
                     <div class="card-body text-center py-5">
                         <i class="bi bi-star-fill fs-1 text-danger mb-3"></i>
                         <h3 class="card-title">Calificaciones</h3>
-                        <p class="card-text text-muted">Define los criterios de evaluación para tus contenidos favoritos.</p>
+                        <p class="card-text text-muted">Define los criterios de evaluación para tus contenidos
+                            favoritos.</p>
                         <a href="calificaciones.html" class="btn btn-netflix mt-3">Gestionar</a>
                     </div>
                 </div>
@@ -103,7 +107,8 @@
             <div class="row align-items-center">
                 <div class="col-md-8">
                     <h3>Control de Relaciones</h3>
-                    <p class="text-muted mb-0">Asocia películas con sus respectivas categorías y asigna las calificaciones que merecen.</p>
+                    <p class="text-muted mb-0">Asocia películas con sus respectivas categorías y asigna las
+                        calificaciones que merecen.</p>
                 </div>
                 <div class="col-md-4 text-md-end mt-3 mt-md-0">
                     <a href="videoCategoria.html" class="btn btn-outline-danger me-2">Categorizar</a>
@@ -115,8 +120,12 @@
 
     <!-- PIE DE PÁGINA -->
     <footer class="py-4 mt-5 border-top border-secondary text-center text-muted">
-        <p>&copy; 2026 NETPOLIX - Desarrollo Web. Todos los derechos reservados.</p>
+        <p>&copy; <span id="year"></span> NETPOLIX - Johan Moreno. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
