@@ -9,7 +9,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 **Sistema web de gestión de videos con arquitectura profesional.**
-*Desarrollado con Flask, SQLAlchemy, MySQL, Bootstrap 5 y JavaScript.*
+_Desarrollado con Flask, SQLAlchemy, MySQL, Bootstrap 5 y JavaScript._
 
 </div>
 
@@ -32,14 +32,15 @@
 <div align="center">
 
 ### Interfaz Principal
+
 ![Inicio](screenshots/inicio.webp)
 
-| Gestión de Videos | Gestión de Categorías | Gestión de Calificaciones |
-| :---: | :---: | :---: |
+|         Gestión de Videos          |           Gestión de Categorías            |             Gestión de Calificaciones              |
+| :--------------------------------: | :----------------------------------------: | :------------------------------------------------: |
 | ![Videos](screenshots/videos.webp) | ![Categorías](screenshots/categorias.webp) | ![Calificaciones](screenshots/calificaciones.webp) |
 
-| Relaciones Categoría | Relaciones Calificación |
-| :---: | :---: |
+|                Relaciones Categoría                 |                  Relaciones Calificación                  |
+| :-------------------------------------------------: | :-------------------------------------------------------: |
 | ![Video Categoría](screenshots/videocategoria.webp) | ![Video Calificación](screenshots/videocalificacion.webp) |
 
 </div>
@@ -49,6 +50,7 @@
 ## Tecnologías Utilizadas
 
 ### Backend
+
 - **Python 3.10+**: Lenguaje base.
 - **Flask**: Framework web para la API.
 - **Flask-CORS**: Manejo de políticas de origen cruzado.
@@ -57,6 +59,7 @@
 - **python-dotenv**: Gestión de variables de entorno.
 
 ### Frontend
+
 - **HTML5 & CSS3**: Estructura y estilos personalizados (Dark Theme).
 - **Bootstrap 5**: Framework de diseño y componentes.
 - **JavaScript (Vanilla)**: Lógica de consumo de API mediante fetch().
@@ -67,18 +70,22 @@
 ## Instalación y Configuración
 
 ### 1. Clonar el repositorio
+
 ```bash
-git clone https://github.com/tu-usuario/netpolix.git
+git clone https://github.com/JohanRandom/netpolix-flask-webapp
 cd netpolix
 ```
 
 ### 2. Instalar dependencias
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 3. Configurar variables de entorno
+
 Crear un archivo `.env` en la raíz con los siguientes datos:
+
 ```text
 DB_USER=tu_usuario
 DB_PASSWORD=tu_contraseña
@@ -91,9 +98,11 @@ DB_NAME=netpolix
 ## Ejecución
 
 Para iniciar el servidor de desarrollo:
+
 ```bash
 python app.py
 ```
+
 La API estará disponible en `http://127.0.0.1:5000`. La interfaz se puede visualizar abriendo `index.html` en el navegador.
 
 ---
