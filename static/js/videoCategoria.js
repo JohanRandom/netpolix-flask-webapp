@@ -70,7 +70,7 @@ async function obtenerVideoCategoria() {
 // ===============================================
 
 document
-    .getElementById("formCategoria")
+    .getElementById("formVideoCategoria")
     .addEventListener("submit", async function (e) {
 
         e.preventDefault();
@@ -100,7 +100,7 @@ document
 
                 alert("Relación creada correctamente");
 
-                document.getElementById("formCategoria").reset();
+                document.getElementById("formVideoCategoria").reset();
 
                 obtenerVideoCategoria();
 

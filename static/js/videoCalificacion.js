@@ -73,7 +73,7 @@ async function obtenerVideoCalificacion() {
 // ===============================================
 
 document
-    .getElementById("formCategoria")
+    .getElementById("formVideoCalificacion")
     .addEventListener("submit", async function (e) {
 
         e.preventDefault();
@@ -103,7 +103,7 @@ document
 
                 alert("Relación creada correctamente");
 
-                document.getElementById("formCategoria").reset();
+                document.getElementById("formVideoCalificacion").reset();
 
                 obtenerVideoCalificacion();
 
@@ -208,7 +208,10 @@ document
     });
 
 // ===============================================
-// INICIO
+// INICIO AUTOMÁTICO
 // ===============================================
 
+// Llamada directa al final del script. Al estar al final del body en el HTML,
+// los elementos de la tabla ya existen y la función se ejecutará siempre
+// sin depender de eventos adicionales.
 obtenerVideoCalificacion();

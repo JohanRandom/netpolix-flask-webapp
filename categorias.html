@@ -4,394 +4,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netpolix - Gestión de Categorías</title>
 
-    <title>Gestión de Categorías</title>
-
-    <!-- Bootstrap -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
-    <!-- .ico -->
+    <!-- Icono -->
     <link rel="icon" type="image/x-icon" href="screenshots/netpolix.ico">
-
-    <!-- CSS -->
+    <!-- CSS Estilo Netflix -->
     <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
-<body class="bg-light">
+<body>
 
-    <!-- NAVBAR -->
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-
-        <div class="container">
-
-            <a class="navbar-brand fw-bold" href="#">
-
-                <i class="bi bi-film"></i>
-                NETPOLIX ADMIN
-
-            </a>
-
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">NETPOLIX</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-
                 <span class="navbar-toggler-icon"></span>
-
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-
-                        <a class="nav-link active" href="categorias.html">
-
-                            <i class="bi bi-tags"></i>
-                            Categorías
-
-                        </a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="calificaciones.html">
-
-                            <i class="bi bi-star-fill"></i>
-                            Calificaciones
-
-                        </a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="video.html">
-
-                            <i class="bi bi-camera-reels"></i>
-                            Videos
-
-                        </a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="videocategoria.html">
-
-                            <i class="bi bi-diagram-3"></i>
-                            Video Categoría
-
-                        </a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="videocalificacion.html">
-
-                            <i class="bi bi-star-half"></i>
-                            Video Calificación
-
-                        </a>
-
-                    </li>
-
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="video.html">Películas</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="categorias.html">Categorías</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calificaciones.html">Calificaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="videoCategoria.html">Video Categoría</a></li>
+                    <li class="nav-item"><a class="nav-link" href="videoCalificacion.html">Video Calificación</a></li>
                 </ul>
-
             </div>
-
         </div>
-
     </nav>
 
-    <div class="container py-4">
+    <div class="container py-5 mt-4">
 
-        <!-- TITULO -->
-        <div class="mb-4">
-            <h1 class="fw-bold">
-                <i class="bi bi-film"></i>
+        <!-- TÍTULO -->
+        <div class="mb-5">
+            <h1 class="fw-bold text-white">
+                <i class="bi bi-tags text-danger"></i>
                 Gestión de Categorías
             </h1>
-
-            <p class="text-muted">
-                Cliente Web Flask + Bootstrap + JavaScript
-            </p>
+            <p class="text-muted">Administra los géneros y categorías de contenido.</p>
         </div>
 
         <div class="row">
-            <!-- FORMULARIO -->
-            <!-- PANEL IZQUIERDO -->
+            <!-- PANEL DE CONTROL (Izquierda) -->
             <div class="col-md-5">
-
-                <div class="card shadow-sm border-0">
-
-                    <div class="card-body">
-
-                        <!-- TABS -->
-                        <ul class="nav nav-tabs mb-4 d-flex flex-nowrap justify-content-between" id="tabsCategorias"
-                            style="font-size: 14px;">
-
-                            <li class="nav-item flex-fill text-center">
-
-                                <button class="nav-link active active w-100" data-bs-toggle="tab"
-                                    data-bs-target="#crear">
-
-                                    <i class="bi bi-plus-lg"></i>
-                                    CREAR
-
-                                </button>
-
-                            </li>
-
-                            <li class="nav-item flex-fill text-center">
-
-                                <button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#editar">
-
-                                    <i class="bi bi-pencil"></i>
-                                    EDITAR
-
-                                </button>
-
-                            </li>
-
-                            <li class="nav-item flex-fill text-center">
-
-                                <button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#eliminar">
-
-                                    <i class="bi bi-trash"></i>
-                                    ELIMINAR
-
-                                </button>
-
-                            </li>
-
-                            <li class="nav-item flex-fill text-center">
-
-                                <button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#buscar">
-
-                                    <i class="bi bi-search"></i>
-                                    BUSCAR
-
-                                </button>
-
-                            </li>
-
+                <div class="card shadow border-0">
+                    <div class="card-body p-4">
+                        
+                        <ul class="nav nav-tabs mb-4 d-flex" id="tabsCategorias">
+                            <li class="nav-item flex-fill"><button class="nav-link active w-100" data-bs-toggle="tab" data-bs-target="#crear">CREAR</button></li>
+                            <li class="nav-item flex-fill"><button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#editar">EDITAR</button></li>
+                            <li class="nav-item flex-fill"><button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#eliminar">ELIMINAR</button></li>
+                            <li class="nav-item flex-fill"><button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#buscar">BUSCAR</button></li>
                         </ul>
 
-                        <!-- CONTENIDO -->
-                        <div class="tab-content">
-
+                        <div class="tab-content mt-3">
                             <!-- CREAR -->
                             <div class="tab-pane fade show active" id="crear">
-
-                                <h4 class="mb-4">
-                                    Crear Categoría
-                                </h4>
-
+                                <h4 class="mb-3 text-danger">Nueva Categoría</h4>
                                 <form id="formCategoria">
-
                                     <div class="mb-3">
-
-                                        <label class="form-label">
-                                            Nombre
-                                        </label>
-
-                                        <input type="text" id="nombre" class="form-control" placeholder="Ej: Acción"
-                                            required>
-
+                                        <label class="form-label">Nombre</label>
+                                        <input type="text" id="nombre" class="form-control" placeholder="Ej: Ciencia Ficción" required>
                                     </div>
-
                                     <div class="mb-3">
-
-                                        <label class="form-label">
-                                            Descripción
-                                        </label>
-
-                                        <textarea id="descripcion" class="form-control" rows="4" required></textarea>
-
+                                        <label class="form-label">Descripción</label>
+                                        <textarea id="descripcion" class="form-control" rows="3" placeholder="Breve descripción del género..." required></textarea>
                                     </div>
-
-                                    <button class="btn btn-success w-100">
-
-                                        <i class="bi bi-save"></i>
-                                        Crear Categoría
-
-                                    </button>
-
+                                    <button class="btn btn-netflix w-100">Crear Categoría</button>
                                 </form>
-
                             </div>
 
                             <!-- EDITAR -->
                             <div class="tab-pane fade" id="editar">
-
-                                <h4 class="mb-4">
-                                    Editar Categoría
-                                </h4>
-
+                                <h4 class="mb-3 text-warning">Modificar Categoría</h4>
                                 <form id="formEditarCategoria">
-
                                     <div class="mb-3">
-
-                                        <label class="form-label">
-                                            ID
-                                        </label>
-
-                                        <input type="number" id="editar_id" class="form-control" placeholder="Ej: 1"
-                                            required>
-
+                                        <label class="form-label">ID</label>
+                                        <input type="number" id="editar_id" class="form-control" required>
                                     </div>
-
                                     <div class="mb-3">
-
-                                        <label class="form-label">
-                                            Nombre
-                                        </label>
-
-                                        <input type="text" id="editar_nombre" class="form-control"
-                                            placeholder="Nuevo nombre" required>
-
+                                        <label class="form-label">Nuevo Nombre</label>
+                                        <input type="text" id="editar_nombre" class="form-control" required>
                                     </div>
-
                                     <div class="mb-3">
-
-                                        <label class="form-label">
-                                            Descripción
-                                        </label>
-
-                                        <textarea id="editar_descripcion" class="form-control" rows="4"
-                                            placeholder="Nueva descripción" required></textarea>
-
+                                        <label class="form-label">Nueva Descripción</label>
+                                        <textarea id="editar_descripcion" class="form-control" rows="3" required></textarea>
                                     </div>
-
-                                    <button class="btn btn-warning w-100">
-
-                                        <i class="bi bi-pencil-square"></i>
-                                        Actualizar Categoría
-
-                                    </button>
-
+                                    <button class="btn btn-warning w-100 py-2 text-dark fw-bold">Actualizar</button>
                                 </form>
-
                             </div>
 
                             <!-- ELIMINAR -->
                             <div class="tab-pane fade" id="eliminar">
-
-                                <h4 class="mb-4">
-                                    Eliminar Categoría
-                                </h4>
-
+                                <h4 class="mb-3 text-danger">Borrar Categoría</h4>
                                 <form id="formEliminarCategoria">
-
                                     <div class="mb-3">
-
-                                        <label class="form-label">
-                                            ID de la categoría
-                                        </label>
-
-                                        <input type="number" id="eliminar_id" class="form-control" placeholder="Ej: 1"
-                                            required>
-
+                                        <label class="form-label">ID de la categoría</label>
+                                        <input type="number" id="eliminar_id" class="form-control" required>
                                     </div>
-
-                                    <button class="btn btn-danger w-100">
-
-                                        <i class="bi bi-trash"></i>
-                                        Eliminar Categoría
-
-                                    </button>
-
+                                    <button class="btn btn-danger w-100">Eliminar Registro</button>
                                 </form>
-
                             </div>
 
                             <!-- BUSCAR -->
                             <div class="tab-pane fade" id="buscar">
-
-                                <h4 class="mb-4">
-                                    Buscar Categorías
-                                </h4>
-
+                                <h4 class="mb-3">Filtro Rápido</h4>
                                 <div class="mb-3">
-
-                                    <label class="form-label">
-                                        Buscar
-                                    </label>
-
-                                    <input type="text" id="inputBuscar" class="form-control"
-                                        placeholder="Buscar por Nombre/Descripción..." onkeyup="buscarCategorias()">
-
+                                    <input type="text" id="inputBuscar" class="form-control" placeholder="Nombre de categoría..." onkeyup="buscarCategorias()">
                                 </div>
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
 
-            <!-- TABLA -->
-            <div class="col-md-7">
-
-                <div class="card shadow-sm border-0">
-
-                    <div class="card-body">
-
+            <!-- TABLA (Derecha) -->
+            <div class="col-md-7 mt-4 mt-md-0">
+                <div class="card shadow border-0">
+                    <div class="card-body p-4">
                         <div class="d-flex justify-content-between align-items-center mb-4">
-
-                            <h4>
-                                <i class="bi bi-table"></i>
-                                Categorías Registradas
-                            </h4>
-
-                            <button class="btn btn-outline-secondary" onclick="obtenerCategorias()">
-
-                                <i class="bi bi-arrow-clockwise"></i>
-                                Actualizar
+                            <h4 class="mb-0 text-white">Géneros Disponibles</h4>
+                            <button class="btn btn-outline-light btn-sm" onclick="obtenerCategorias()">
+                                <i class="bi bi-arrow-clockwise"></i> Actualizar
                             </button>
-
                         </div>
 
-                        <table class="table table-hover align-middle">
-
-                            <thead class="table-light">
-
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Descripción</th>
-                                </tr>
-
-                            </thead>
-
-                            <tbody id="tablaCategorias">
-
-                            </tbody>
-
-                        </table>
-
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaCategorias">
+                                    <!-- Cargado por JS -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
-    <!-- JS -->
     <script src="static/js/categorias.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
