@@ -11,6 +11,7 @@ env/
 
 # Sistema
 .DS_Store
+.env
 
 # Logs
 *.log
