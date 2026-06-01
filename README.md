@@ -34,9 +34,9 @@
 ### Interfaz Principal
 ![Inicio](screenshots/inicio.webp)
 
-| Gestión de Videos | Gestión de Categorías |
-| :---: | :---: |
-| ![Videos](screenshots/videos.webp) | ![Categorías](screenshots/categorias.webp) |
+| Gestión de Videos | Gestión de Categorías | Gestión de Calificaciones |
+| :---: | :---: | :---: |
+| ![Videos](screenshots/videos.webp) | ![Categorías](screenshots/categorias.webp) | ![Calificaciones](screenshots/calificaciones.webp) |
 
 | Relaciones Categoría | Relaciones Calificación |
 | :---: | :---: |
