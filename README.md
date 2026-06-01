@@ -90,13 +90,15 @@ NETPOLIX/
 ├── conexion.py
 ├── models.py
 ├── requirements.txt
+├── .env
 ├── README.md
 │
+├── index.html
 ├── categorias.html
 ├── calificaciones.html
-├── videos.html
-├── videocategoria.html
-├── videocalificacion.html
+├── video.html
+├── videoCategoria.html
+├── videoCalificacion.html
 │
 ├── static/
 │   ├── css/
